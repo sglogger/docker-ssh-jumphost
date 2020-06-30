@@ -17,7 +17,7 @@ services:
         - SSH_PUB_KEY=${USER_PUBKEY}
         - HOSTNAME=${HOSTNAME}
     ports:
-      - "193.239.21.17:22:22"
+      - "${HOST_IP}:22:22"
     restart: unless-stopped
     env_file:
       - .env
@@ -28,8 +28,8 @@ services:
     image: nginx:1.19-alpine
     restart: unless-stopped
     ports:
-      - "193.239.21.17:8022:8022"
-      - "193.239.21.17:80:80"
+      - "${HOST_IP}:8022:8022"
+      - "${HOST_IP}:80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./certbot/www/:/var/www/certbot/

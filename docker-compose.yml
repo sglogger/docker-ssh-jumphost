@@ -3,7 +3,6 @@
 # Port 8022 Webshell to SSH server (via 127.0.0.1:22)
 # letsencrypt cert for domain
 # ---------------------------------------------------
-# httpd auth einbauen
 version: "3"
 
 services:
